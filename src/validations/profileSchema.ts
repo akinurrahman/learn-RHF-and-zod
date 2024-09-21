@@ -3,7 +3,7 @@ import { emailSchema, phoneSchema } from "./commonSchemas";
 
 export const profileSchema = z.object({
   profileImg: z.union([z.string().url(), z.any()]).optional(),
-  fullName: z.string().min(1, "Full name is required"),
+  fullName: z.string().min(3, "Full name is required"),
   email: emailSchema,
   phone: phoneSchema,
   address: z.string().min(5, "Address is required"),
