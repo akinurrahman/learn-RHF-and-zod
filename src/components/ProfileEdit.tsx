@@ -14,8 +14,7 @@ interface ProfileEditProps {
 const ProfileEdit = ({ user }: ProfileEditProps) => {
     // useForm logic with profile schema validation
     const methods = useForm<ProfileSchemaType>({
-        mode: "onBlur",
-        reValidateMode: "onChange",
+        mode: "onTouched",
         resolver: zodResolver(profileSchema),
         defaultValues: user || {}, // Use the existing profile data if available
     });

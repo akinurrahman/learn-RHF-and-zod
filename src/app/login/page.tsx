@@ -8,12 +8,13 @@ import InputField from "@/components/InputField";
 
 const Page = () => {
   const methods = useForm<LoginSchemaType>({
-    mode: "all",
+    mode: "onTouched",
     resolver: zodResolver(loginSchema),
     defaultValues: {
       identifier: "",
       password: ""
-    }
+    },
+    
   });
 
   const onSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
